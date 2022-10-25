@@ -14,4 +14,13 @@ alert(result);
 const resultContainer = document.getElementById('result');
 resultContainer.innerHTML = result;
 
+//Homework part 2
 
+const number = prompt('Enter 5-digit number');
+const first = number[0];
+const second = number[1];
+const third = number[2]; 
+const fourth = number[3]; 
+const fifth = number[4];
+
+alert(`${first} ${second} ${third} ${fourth} ${fifth}`)
