@@ -1,12 +1,18 @@
-window.addEventListener('DOMContentLoaded', (event) => {
-    const userBYear = prompt('Введіть Ваш рік народження.', '');  
+window.addEventListener('DOMContentLoaded', () => {
+    const userBirthYear = prompt('Введіть Ваш рік народження.', '');  
     const userCity = prompt('В якому місті Ви проживаєте?', '');
     const userSport = prompt('Введіть Ваш улюблений вид спорту.', '');
 
     const today = new Date().getFullYear();
-    const userAge = today - +userBYear;
+    const userAge = today - +userBirthYear;
 
-    let result = userBYear ? `Ваш вік: ${userAge} р.\n` : 'Шкода, що Ви не захотіли ввести свій рік народження :(\n';
+    if (isNaN(userAge)) {
+        result = `Задане значення не коректне! Буль ласка, введіть Ваш рік народження у форматі чотиризначного числа.\n`
+    } else if (userAge) {
+        result = `Ваш вік: ${userAge} р.\n`; 
+    } else {
+        result = 'Шкода, що Ви не захотіли ввести свій рік народження :(\n';
+    }
 
     const kyiv = 'київ';
     const washington = 'вашингтон';
