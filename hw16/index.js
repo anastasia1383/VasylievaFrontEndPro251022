@@ -48,14 +48,6 @@ const operations = {
     },
     [OPERATORS.EXP]: (a, b) => a ** b,
 }
-
-const validate = (x, znak, y) => {
-    if (znak === OPERATORS.DIV || znak === OPERATORS.INTEGER_DIV) {
-        if (y === 0) {
-            throw new Error('We can not divide by zero!')
-        }
-    }
-}
  
 const doMath = (x, znak, y) => {
     const operation = operations[znak];
