@@ -34,11 +34,29 @@ const operations = {
     [OPERATORS.PLUS]: (a, b) => +a + +b,
     [OPERATORS.MIN]: (a, b) => a - b,
     [OPERATORS.MULTY]: (a, b) => a * b,
-    [OPERATORS.DIV]: (a, b) => a / b,
-    [OPERATORS.INTEGER_DIV]: (a, b) => a % b,
+    [OPERATORS.DIV]: (a, b) => {
+        if (+b === 0) {
+            throw new Error('We can not divide by zero!')
+        } 
+        return a / b 
+    },
+    [OPERATORS.INTEGER_DIV]: (a, b) => {
+        if (+b === 0) {
+            throw new Error('We can not divide by zero!')
+        } 
+        return a % b 
+    },
     [OPERATORS.EXP]: (a, b) => a ** b,
 }
 
+const validate = (x, znak, y) => {
+    if (znak === OPERATORS.DIV || znak === OPERATORS.INTEGER_DIV) {
+        if (y === 0) {
+            throw new Error('We can not divide by zero!')
+        }
+    }
+}
+ 
 const doMath = (x, znak, y) => {
     const operation = operations[znak];
     if (operation) {
