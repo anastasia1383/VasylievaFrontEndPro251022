@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="index.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Manage your tasks</h1>
+        <div class="menu-container">
+            <div class="input_container">
+                <input id="task-name" type="text">
+                <label>Add the task</lable>
+            </div>
+            <div id="menu">
+                <button data-action="start">Add task to the start of the list</button>
+                <button data-action="end">Add task to the end of the list</button>
+                <button data-action="delete">Delete task(s)</button>
+                <button data-action="sort">Sort the list</button>
+            </div>
+        </div>
+        <div id="list-wrapper">
+            <h1>Daily tasks</h1>
+        </div>
+    </div>
+</body>
+
+</html>
