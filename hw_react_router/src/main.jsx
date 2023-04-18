@@ -1,10 +1,30 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import { Albums, Photos, Users, ErrorPage } from './pages';
 import './index.css'
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Users />,
+    errorElement: <ErrorPage />,
+  },
+  {
+    path: "users/:userId/albums",
+    element: <Albums />,
+  },
+  {
+    path: "users/:userId/albums/:albumId/photos",
+    element: <Photos />,
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);

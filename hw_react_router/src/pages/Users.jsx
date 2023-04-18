@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import Api from "../Api";
 import { useState, useEffect } from "react";
+import Api from "../Api";
 
-const Users = () => {
+export const Users = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
@@ -16,9 +16,14 @@ const Users = () => {
 
     return <>
         {users.map((user) => <div key={user.phone}>
-            <Link to={`users/${user.id}/albums`}>{user.name}</Link>
-            </div>)}
+            <div className="flex">
+                <h1>
+                    {user.name}
+                </h1>
+                <Link to={`users/${user.id}/albums`}>
+                    <button>See albums</button></Link>
+            </div>
+        </div>
+        )}
     </>
 };
-
-export default Users;

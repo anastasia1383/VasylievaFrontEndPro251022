@@ -1,21 +1,30 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Api from "../Api";
 
-const Albums = () => {
+export const Albums = () => {
     const [albums, setAlbums] = useState([]);
 
+    const { userId } = useParams();
+
     useEffect(() => {
-        const setAlbums = async () => {
-            const data = await Api.getUserById();
+        const getAlbums = async () => {
+            const data = await Api.getAlbumsByUserId(userId);
             setAlbums(data);
         }
 
-        getUsers();
+        getAlbums();
     }, []);
 
     return <>
-    {albums.map((album) => <div key={album.id}><Link to={`albums/${album.userId}/photos`}>{album.title}</Link></div>)}
+        {albums.map((album) => <div key={album.id}>
+            <div className="flex">
+                <h1>
+                    {album.title}
+                </h1>
+                <Link to={`${album.id}/photos`}><button>See photos</button></Link>
+            </div>
+        </div>
+        )}
     </>
 };
-
-export default Albums;
