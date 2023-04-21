@@ -1,0 +1,71 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.task {
+  background-color: rgb(186, 180, 233);
+  border-radius: 6px;
+  margin-bottom: 20px;
+  padding: 10px 140px 10px 15px;
+  text-align: left;
+  font-size: 22px;
+  position: relative;
+  width: 310px;
+}
+
+.task div {
+  display: flex;
+  align-items: center;
+}
+
+.task__number {
+  color: rgb(0, 4, 135);
+  border: 2px solid rgb(0, 4, 135);
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  text-align: center;
+  font-style: 14px;
+  margin-right: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.task__text {
+  flex: 1;
+}
+
+.task--done .task__text {
+  text-decoration: line-through;
+  opacity: 0.3;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+  width: auto;
+  display: inline-block;
+  color: #000487;
+  transition: opacity 0.2s ease;
+}
+
+.icon:hover {
+  opacity: 0.3;
+}
+
+.task-input__container {
+  display: flex;
+  width: 465px;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.placeholder {
+  margin-bottom: 10px;
+}
