@@ -1,0 +1,8 @@
+
+input.inpur-error, select.inpur-error {
+    border-color: red;
+}
+
+button:disabled {
+    opacity: 0.3;
+}
