@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Weather App</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="select">
+      <select name="cities" id="city-select">
+        <option value="default" class="default">Your City</option>
+        <option value="kiev">Kiev</option>
+        <option value="berlin">Berlin</option>
+        <option value="london">London</option>
+        <option value="paris">Paris</option>
+        <option value="milano">Milano</option>
+      </select>
+    </div>
+    <div class="weather loading">
+      <div class="content">
+        <img src="images/rain.png" class="weather-icon" alt="rain">
+        <h1 class="temp"></h1>
+        <h2 class="city"></h2>
+        <div class="details">
+          <div class="col">
+            <img src="images/humidity.png" alt="humidity">
+            <div>
+              <p class="humidity"></p>
+              <p>Humidity</p>
+            </div>
+          </div>
+          <div class="col">
+            <img src="images/wind.png" alt="wind">
+            <div>
+              <p class="wind"></p>
+              <p>Wind Speed</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="loader"></div>
+    </div>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
